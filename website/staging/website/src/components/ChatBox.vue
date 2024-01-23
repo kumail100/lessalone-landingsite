@@ -18,7 +18,8 @@
                 v-model="currentMessage"
                 type="text"
                 class="messageInput"
-                placeholder="Ask me anything..."
+                placeholder="Ask me anything..." 
+                autodcomplete="off"
               />
               <button
                 @click="sendMessage(currentMessage)"
@@ -72,16 +73,24 @@ export default {
   max-width: 700px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
 }
 
 input {
  width: 100%;
- max-width: 400px;
+ max-width: 390px;
  padding: 11px;
  border-color: #92d7ef;
  border-style: solid;
  border-top-left-radius: 10px;
- border-bottom-left-radius: 10px;
+ border-bottom-left-radius: 10px;  
+ outline: none;
+ position: relative;
 }
 
 
@@ -92,13 +101,15 @@ button {
  border: 0px;
  border-top-right-radius: 10px;
  border-bottom-right-radius: 10px;
+ position: relative;
 }
 
 .messageBox {
- height: 200px;
+ height: 300px;
  width: 100%;
  padding: 5%;
  overflow-y: auto;
+ position: relative;
 }
 
 
@@ -110,8 +121,8 @@ button {
  padding: 10px;
  margin-top: 15px;
  margin-bottom: 15px;
- width: 50%;
- margin-left: 50%;
+ width: 70%;
+ margin-left: 30%;
 }
 
 
@@ -122,7 +133,7 @@ button {
  padding: 10px;
  margin-top: 15px;
  margin-bottom: 15px;
- width: 50%;
- margin-right: 5s0%;
+ width: 70%;
+ margin-right: 30%;
 }
 </style>
