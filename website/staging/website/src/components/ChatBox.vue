@@ -18,11 +18,12 @@
                 v-model="currentMessage"
                 type="text"
                 class="messageInput"
-                placeholder="Ask me anything..." 
-                autodcomplete="off"
+                placeholder="Ask me anything.." 
+                autocomplete="off" 
+                v-on:keyup.enter="sendMessage(currentMessage); resetInput();"
               />
               <button
-                @click="sendMessage(currentMessage)"
+                @click="sendMessage(currentMessage); resetInput();"
                 class="askButton"
               >
                 Send
@@ -60,6 +61,10 @@ export default {
             data: response.data.data, // Access the 'data' property of the response object
           });
         });
+
+    },
+    resetInput() {
+      this.currentMessage = "";
     },
   },
 };
@@ -83,6 +88,7 @@ export default {
 
 input {
  width: 100%;
+ min-width: 100px;
  max-width: 390px;
  padding: 11px;
  border-color: #92d7ef;
@@ -123,6 +129,7 @@ button {
  margin-bottom: 15px;
  width: 70%;
  margin-left: 30%;
+ opacity: .8;
 }
 
 
@@ -135,5 +142,6 @@ button {
  margin-bottom: 15px;
  width: 70%;
  margin-right: 30%;
+ opacity: .8;
 }
 </style>
