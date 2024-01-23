@@ -24,7 +24,7 @@
                 @click="sendMessage(currentMessage)"
                 class="askButton"
               >
-                Go
+                Send
               </button>
             </div>
           </div>
@@ -96,6 +96,7 @@ button {
 
 .messageBox {
  height: 200px;
+ width: 100%;
  padding: 5%;
  overflow-y: auto;
 }
